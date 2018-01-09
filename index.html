@@ -17,13 +17,19 @@
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="./assets/css/demo.css" rel="stylesheet" />
 </head>
+<div class="video-background">
+    <div class="video-foreground">
+        <iframe src="https://www.youtube.com/embed/ems2eg8R0wA?controls=0&showinfo=0&rel=0&autoplay=0&loop=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
 
-<body class="index-page sidebar-collapse">
+<body id="vidtop-content" class="index-page sidebar-collapse">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
         <div class="container">
             <div class="navbar-translate">
-                <a class="navbar-brand" href="/" rel="tooltip" title="Yenilenebilir Enerji Kaynakları Üzerine Proje Çalışması" data-placement="bottom">
+                <a class="navbar-brand" onclick="goToPage('.index-page')" rel="tooltip" title="Yenilenebilir Enerji Kaynakları Üzerine Proje Çalışması"
+                    data-placement="bottom">
                     Alternatif Enerji
                 </a>
                 <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index"
@@ -37,12 +43,6 @@
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" onclick="goToPage('.index-page')">
-                            <i class="fa fa-home"></i>
-                            <p>Home</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)" onclick="goToPage('.section-announcement')">
                             <i class="fa fa-bell"></i>
                             <p>Duyurular</p>
@@ -54,6 +54,13 @@
                             <p>Proje Tanımı</p>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="goToPage('.section-timeline')">
+                            <i class="fa fa-calendar"></i>
+                            <p>Etkinlik Takvimi</p>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)" onclick="goToPage('.section-energy-sources')">
                             <i class="fa fa-recycle"></i>
@@ -62,10 +69,22 @@
                     </li>
 
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" onclick="goToPage('.section-team')">
+                    <li class="dropdown nav-item">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" id="navbarDropdownMenuLink1" href="javascript:void(0)">
                             <i class="fa fa-users"></i>
-                            <p>Proje Ekibi</p>
+                            <p>Ekip</p>
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+                            <a class="dropdown-item" onclick="goToPage('.section-project-team')">Proje Ekibi</a>
+                            <a class="dropdown-item" onclick="goToPage('.section-guide')">Rehberler</a>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="goToPage('.section-contact')">
+                            <i class="fa fa-phone"></i>
+                            <p>İletişim</p>
                         </a>
                     </li>
                 </ul>
@@ -75,14 +94,9 @@
     <!-- End Navbar -->
     <div class="wrapper">
         <div class="page-header clear-filter" filter-color="green">
-            <div class="page-header-image" data-parallax="true" style="background-image: url('./assets/img/energy.jpeg');">
+            <div class="page-header-image" data-parallax="true" style="background-image: url('./assets/img/energ1y.jpeg');">
             </div>
             <div class="container">
-                <div onclick="goToPage('.section-briefing')" class="content-center brand">
-                    <img class="n-logo" src="./assets/img/renewable_icon.png" alt="">
-                    <h1 class="h1-seo">YENİLENEBİLİR ENERJİ</h1>
-                    <h3>Aydın Üniversitesi Yenilenebilir Enerji Kaynakları Proje Çalışması</h3>
-                </div>
                 <h6 class="category category-absolute">
                     <a href="http://invisionapp.com/" target="_blank">
                         <img src="./assets/img/adulogo.png" />
@@ -91,6 +105,7 @@
             </div>
         </div>
         <div class="main">
+
             <div class="section section-announcement">
                 <div class="container">
                     <h3 class="title">Duyurular</h3>
@@ -105,12 +120,18 @@
                                                 <i>
                                                     <b>2018-01-08</b>
                                                 </i>
-                                                </br> Sevgili öğretmenler ve öğretmen adayları Yenilenebilir Enerji kaynakları
-                                                Tesislerini yerinde incelemek ve ardından her bir kaynagın çalışma prensibini
-                                                etkinliklerle öğrenmek istiyorsanız lütfen
+                                                </br> Sevgili öğretmenlerler Yenilenebilir Enerji kaynakları Tesislerini yerinde
+                                                incelemek ve ardından her bir kaynagın çalışma prensibini etkinliklerle öğrenmek
+                                                istiyorsanız lütfen
                                                 <a href="#">
                                                     <u>başvuru</u>
                                                 </a> formunu doldurunuz
+
+
+                                                <p>
+                                                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdadkkp3aVvct39_fT4ndyRw0VAxsi89VI8YZVXQF7i-pSWfQ/viewform?embedded=true"
+                                                        style="width : 100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Yükleniyor...</iframe>
+                                                </p>
                                             </p>
                                         </li>
                                     </ul>
@@ -120,6 +141,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="section section-briefing ">
                 <div class="container ">
                     <h3 class="title">Proje Tanimi</h3>
@@ -192,6 +214,91 @@
                             </p>
                         </div>
 
+                    </div>
+                </div>
+            </div>
+
+            <div class="section section-timeline">
+
+                <div class="container">
+                    <h2 class="title">Etkinlik Takvimi</h2>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="timeline">
+                                <li class="timeline-item">
+                                    <div class="timeline-badge">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Geleceğin Mimarı Öğretmenlerle Geleceğin Enerji Kaynaklarını Tanıma</h4>
+                                            <p>
+                                                <h3 class="text-muted">
+                                                    <i class="glyphicon glyphicon-time"></i> 20 Ocak 2019- 25 Ocak 2019</h3>
+                                            </p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>
+                                                <b>Konaklama</b>: Proje süresince katılımcılar Adnan Menderes Üniversitesi Konukevi'nde
+                                                2 kişilik odalarda konaklayacaklardır. Katılımcıların konaklama ve yemek
+                                                masrafları TÜBİTAK tarafından karşılanacaktır. Konukevi ile ilgili detaylı
+                                                bilgi almak için
+                                                <a href="http://idari.adu.edu.tr/konukevi/default.asp?idx=313335" target="_blank">linke</a> tıklayınız.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="timeline-item">
+                                    <div class="timeline-badge">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Son Başvuru Tarihi</h4>
+                                            <p>
+                                                <h3 class="text-muted">
+                                                    <i class="glyphicon glyphicon-time"></i> 31 Ekim 2018</h3>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </li>
+
+
+                                <li class="timeline-item">
+                                    <div class="timeline-badge">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Asil ve Yedek Katılımcı Listesinin Duyurulması</h4>
+                                            <p>
+                                                <h3 class="text-muted">
+                                                    <i class="glyphicon glyphicon-time"></i> 10 Kasım 2018</h3>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </li>
+
+                                <li class="timeline-item">
+                                    <div class="timeline-badge">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Katılımcılar için Kesin Kayıt Onay Verme Son Tarihi</h4>
+                                            <p>
+                                                <h3 class="text-muted">
+                                                    <i class="glyphicon glyphicon-time"></i> 10 Kasım 2018</h3>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -269,13 +376,12 @@
                 </div>
             </div>
 
-
-            <div class="section section-team">
+            <div class="section section-project-team">
                 <div class="container">
-                    <h2 class="title">Proje Ekibi</h2>
+                    <h2 class="title">Proje Ekibi - Eğitmenler</h2>
                     <div class="team">
                         <div class="row">
-                            <div class="col-md-6 offset-md-3">
+                            <div class="col-md-4">
                                 <div class="team-player">
                                     <img src="../assets/img/dilek_karisan_avatar.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
                                     <h4 class="title">Dilek Karışan Korucu</h4>
@@ -298,23 +404,44 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="team-player">
                                     <img src="../assets/img/nilgun_yenice_avatar.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
                                     <h4 class="title">Prof. Dr. Nilgün Yenice</h4>
-                                    <p class="category text-primary">Proje Eğitmen ve Araştırmacısı </p>
-                                    <p class="description">.. bu alan güncellenmektedir</p>
+                                    <p class="category text-primary">Uzman</p>
+                                    <p class="description">Proje araştırmacısı ve eğitmeni Dr. Nilgün Yenice, Gazi Üniversitesinden doktora derecesine
+                                        sahiptir. 2012 yılında doçent olan Dr. Yenice’nin araştırma ve ilgi alanları arasında,
+                                        fen eğitimi, bilimin doğası, sorgulamaya dayalı fen eğitimi, özyeterlik, fen okuryazarlığı,
+                                        argümantasyon, bilimsel epistemolojik inanç, duygusal zeka ve fen öğrenmeye yönelik
+                                        motivasyon, eleştirel düşünme, üstbiliş, problem çözme ve STEM konuları yer almaktadır.
+                                        Bu araştırma konularına yönelik 11 yüksek lisans tezi ve 1 doktora tezi yönetmiştir.
+                                        Çevreye yönelik etik yaklaşımlar ile sürdürülebilir çevreye yönelik tutumlar ve doğaya
+                                        yakınlık derecelerinin incelenmesi konusunda da yüksek lisans tezi yönetmiştir. Dr.
+                                        Yenice’nin 20 adet uluslararası ve 33 adet ulusal indeksli dergilerde yayımlanmış
+                                        makaleleri, 19 adet uluslararası ve 17 adet ulusal bilimsel toplantılarda sunulmuş
+                                        bildirileri bulunmaktadır. 15 adet araştırma projesinde proje yürütücüsü, yardımcı
+                                        araştırmacı ve eğitmen olarak görevlerde yer almıştır. Uluslararası ve ulusal sempozyum,
+                                        kongre, panel ve çalıştay gibi bilimsel etkinliklerde bilim kurulu üyeliği, oturum
+                                        başkanlığı, düzenleme kurulu üyeliği ve eğitici olarak görev yapmıştır. Bilimin Doğası,
+                                        Gelişimi ve Öğretimi kitabının editörü olan Dr. Yenice aynı zamanda Canlılar Bilimi,
+                                        Fen Bilgisi Laboratuar Deneyleri ve İlköğretimde Fen ve Teknoloji Öğretimi isimli
+                                        kitapların ortak yazarlarındandır. Uluslararası ve ulusal indeksli birçok dergide
+                                        hakemlik yapan Dr. Yenice, Fen Bilimleri Öğretimi Dergisinin Biyoloji Alan Editörüdür.
+                                        Halen Adnan Menderes Üniversitesi Eğitim Fakültesi Matematik ve Fen Bilimleri Eğitimi
+                                        Bölümü, Fen Bilgisi Eğitimi Anabilim Dalında öğretim üyesi olarak görevine devam
+                                        etmektedir.
+                                    </p>
 
                                     <a href="#pablo" class="btn btn-primary btn-icon btn-round">
                                         <i class="fa fa-linkedin"></i>
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="team-player">
                                     <img src="../assets/img/umran_cebesoy_avatar.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
                                     <h4 class="title">Yrd. Doç. Dr. Ümran Betül Cebesoy</h4>
-                                    <p class="category text-primary">Proje Eğitmeni </p>
+                                    <p class="category text-primary">Uzman</p>
                                     <p class="description">Doktora eğitimi Orta Doğu Teknik Üniversitesi’nde tamamlamıştır. Doktora sürecinde 2
                                         adet BAP projesinde araştırmacı olarak görev yapmıştır. 2015 Mart Ayından bu yana
                                         Uşak Üniversitesi’nde Yrd. Doç. Dr. Olarak görev yapmaktadır. KA2 Stratejik ortaklık
@@ -330,10 +457,188 @@
                                     </a>
                                 </div>
                             </div>
+                            <hr>
+                            <div class="col-md-4">
+                                <div class="team-player">
+                                    <img src="../assets/img/default-avatar.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+                                    <h4 class="title">Doç. Dr. Oğuz Özdemir</h4>
+                                    <p class="category text-primary">Uzman</p>
+                                    <p class="description">
+                                        Doktora derecesini Ankara Üniversitesi Sosyal Bilimler Enstitüsü ‘nden almıştır. Doktora tezinde Genetiği Değiştirilmiş Organizmaların
+                                        (GDO’ların ) Doğal Çevreye Etkileri ve Avrupa Birliği Açısından Değerlendirilmesi
+                                        konusunu çalışmıştır. Uzun yıllar öğretmenlik yaptıktan sonra akademisyenliğe geçiş
+                                        yapmıştır. 2004-2012 yılları arasında Yrd. Doç. Dr. Olarak çalışan Dr. Oğuz Özdemir,
+                                        2012 yılından beri doçent doktor unvanı ile akademideki görevine devam etmektedir.
+                                        Doğal Kaynakların Korunması ve Sürdürülebilir Şekilde Değerlendirilmesinde Sivil
+                                        İnisiyatiflerin Rolü, Sürdürülebilir Kaynak Kullanımına Yönelik Çevre Eğitimi Uygulamalarının
+                                        İlköğretim Öğrencilerinin Karbon Ayak İzi Konusunda Bilinçlenmeleri Üzerine Etkisi
+                                        gibi konularda yüksek lisans tezleri yönetmiştir. Ayrıca Doğal Kaynakların Korunması
+                                        ve Sürdürülebilir Şekilde Değerlendirilmesinde Sivil İnisiyatiflerin Rolü: Yukarlakçay
+                                        HES Örneği konusunda proje yürütücülüğü yapmıştır. Yenilenebilir enerji kaynakları
+                                        ile ilgili ulusal ve uluslararası indeksli dergilerde makaleleri bulunmaktadır. Dr.
+                                        Özdemir, Çevre eğitimi ile ilgili lisans ve yüksek lisans dersleri vermektedir.
+                                    </p>
+                                    <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="team-player">
+                                    <img src="../assets/img/default-avatar.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+                                    <h4 class="title">Yrd. Doç. Dr. Engin Karahan</h4>
+                                    <p class="category text-primary">Uzman</p>
+                                    <p class="description">
+                                        Hacettepe Üniversitesi Fen Bilgisi Öğretmenliği Anabilim Dalı’ndan 2008 yılında mezun oldu. Yüksek lisans eğitimini 2012
+                                        yılında Minnesota Üniversitesi’nde “Fen Eğitimi” ve “Öğrenim Teknolojileri” alanlarında,
+                                        doktora eğitimini ise 2015 yılında aynı üniversitede “STEM eğitimi” alanında tamamladı.
+                                        2009-2015 yılları arasında Minnesota Üniversitesi STEM Eğitimi Merkezi’nde araştırmacı
+                                        olarak görev yaptı ve National Science Foundation (NSF) ve National Aeronautics and
+                                        Space Administration (NASA) destekli STEM eğitimi odaklı projelerde yer aldı. 2015
+                                        yılından itibaren Eskişehir Osmangazi Üniversitesi Eğitim Programları ve Öğretim
+                                        alanında öğretim üyesi olarak çalışmaya başlayan ve halen bu görevine devam etmekte
+                                        olan Engin KARAHAN’ın STEM eğitimi, sosyobilimsel konular, öğrenim teknolojileri
+                                        ve öğretmen/öğrenci failliği konularında çeşitli araştırma ve yayınları bulunmaktadır.
+                                        Bu çalışma alanları kapsamında son iki yılda TÜBİTAK ve BAP destekli projeler yürütmüştür.
+                                    </p>
+                                    <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
             </div>
+
+
+            <div class="section section-guide">
+                <div class="container">
+
+                    <h2 class="section-guide title">Proje Ekibi - Rehberler</h2>
+                    <div class="team">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="team-player">
+                                    <img src="../assets/img/default-avatar.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+                                    <h4 class="title">Yılmaz Yurdakul</h4>
+                                    <p class="category text-primary">Rehber</p>
+                                    <p class="description"></p>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="team-player">
+                                    <img src="../assets/img/default-avatar.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+                                    <h4 class="title">Neslihan Yavaşoğlu</h4>
+                                    <p class="category text-primary">Rehber</p>
+                                    <p class="description"></p>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="team-player">
+                                    <img src="../assets/img/default-avatar.png" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+                                    <h4 class="title">Fatma Candarlı</h4>
+                                    <p class="category text-primary">Rehber</p>
+                                    <p class="description"></p>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="team-player">
+                                    <img src="../assets/img/gizem_alpak_avatar.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+                                    <h4 class="title">Gizem Alpak Tunç</h4>
+                                    <p class="category text-primary">Rehber</p>
+                                    <p class="description"></p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="section section-contact">
+                <div class="container">
+                    <h2 class="title">İletişim Ve Ulaşım</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>İletişim</h6>
+                                </div>
+                                <div class="card-body">
+                                    <b>Email</b>:
+                                    <a href="mailto:adualternatifenerji@gmail.com">adualternatifenerji@gmail.com</a>
+                                    <br>
+                                    <b>Telefon</b>:
+                                    <a href="tel:+9002562182020">0256 218 20 00</a>
+                                    <br>
+                                    <b>Twitter</b> :
+                                    <a href="https://twitter.com/adualternatifenerji">adualternatifenerji</a>
+                                    <br>
+                                    <b>Instagram</b>:
+                                    <a href="https://www.instagram.com/adualternatifenerji">adualternatifenerji</a>
+                                    <br>
+                                    <b>Yazışma Adresi</b>: Adnan Menderes Üniversitesi Eğitim Fakültesi Kat:3 Kepez Mevkii/
+                                    Aydın
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Ulaşım</h6>
+                                </div>
+                                <div class="card-body">
+                                    Katılımcıların bulundukları şehirden Adnan Menderes Üniversitesi kampüsüne gelmeleri kendi sorumluluklarındadır ve ulaşım
+                                    giderleri katılımcının kendisine aittir.
+                                    <hr>
+                                    <ul>
+                                        <li>
+                                            <b>İzmir Havaalanı-Konukevi</b>: Havaş servisleri aracılığı ile Aydın merkeze ulaşma
+                                            <b>~90</b>
+                                            dakika
+                                        </li>
+
+                                        <li>
+                                            <b>Aydın Merkezden Konukevine</b> otobüs ile ulaşım
+                                            <b>~20</b> dakika.</li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Harita</h6>
+                                </div>
+                                <div class="card-body">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12601.159789241212!2d27.8544623!3d37.8535056!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa6cf1a612f45b10f!2sAdnan+Menderes+%C3%9Cniversitesi!5e0!3m2!1str!2str!4v1515532095894"
+                                        style="width: 100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="clearfix"></div>
@@ -341,8 +646,7 @@
         <footer class="footer" data-background-color="black">
             <div class="container">
                 <div class="copyright">
-                    &copy;
-                    Tüm Hakları Saklıdır.
+                    &copy; Tüm Hakları Saklıdır.
                     <script>
                         document.write(new Date().getFullYear())
                     </script>
